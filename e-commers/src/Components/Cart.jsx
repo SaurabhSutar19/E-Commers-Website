@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 const Cart = () => {
   return (
-    <Wrapper>
-      <h1>Cart</h1>
-    </Wrapper>
+    // <Wrapper>
+    //   <h1>Cart</h1>
+    // </Wrapper>
+    <h1>Cart</h1>
   );
 };
 

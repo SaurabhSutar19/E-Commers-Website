@@ -34,9 +34,10 @@ const Contact = () => {
   `;
 
   return (
-    <Wrapper>
-      <h1>Contact</h1>
-    </Wrapper>
+    // <Wrapper>
+    //   <h1>Contact</h1>
+    // </Wrapper>
+    <h1>Contact</h1>
   );
 };
 
