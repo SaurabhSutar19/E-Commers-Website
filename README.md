@@ -66,3 +66,13 @@ link : https://github.com/SaurabhSutar19/E-Commers-Website/blob/b574bbcc6c5cd9d2
 Code link :https://github.com/SaurabhSutar19/E-Commers-Website/tree/b574bbcc6c5cd9d2aad52aee344e110900a7742c/e-commers/src
 
 - - https://github.com/SaurabhSutar19/E-Commers-Website/commit/b574bbcc6c5cd9d2aad52aee344e110900a7742c
+
+16 - Complete Trusted Section code path, link and update code
+
+path :e-commers/src/Components/Trusted.jsx
+
+link : https://github.com/SaurabhSutar19/E-Commers-Website/blob/428f6e484f523c16a3b0b613cc571dab6799d06c/e-commers/src/Components/Trusted.jsx
+
+Code link :https://github.com/SaurabhSutar19/E-Commers-Website/tree/428f6e484f523c16a3b0b613cc571dab6799d06c/e-commers/src
+
+- - https://github.com/SaurabhSutar19/E-Commers-Website/commit/428f6e484f523c16a3b0b613cc571dab6799d06c
