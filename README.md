@@ -46,3 +46,13 @@ link : https://github.com/SaurabhSutar19/E-Commers-Website/blob/d1c4a97cd2f3e4bf
 Code link : https://github.com/SaurabhSutar19/E-Commers-Website/tree/729691b55096db8a0706e08dcf8713176d37fb58/e-commers
 
 - - https://github.com/SaurabhSutar19/E-Commers-Website/commit/359d37f2dbf2602f4d3e0355ef5e48ee2f9addbe
+
+14 - Complete HeroSection Code path , link and update code
+
+path :e-commers/src/Components/HeroSection.jsx
+
+link : https://github.com/SaurabhSutar19/E-Commers-Website/blob/aa6a1e85babd1528e9f4222ec70066eb76fe5359/e-commers/src/Components/HeroSection.jsx
+
+Code link : https://github.com/SaurabhSutar19/E-Commers-Website/tree/aa6a1e85babd1528e9f4222ec70066eb76fe5359/e-commers/src
+
+- - https://github.com/SaurabhSutar19/E-Commers-Website/commit/aa6a1e85babd1528e9f4222ec70066eb76fe5359
