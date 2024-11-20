@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import HeroSection from "./HeroSection";
+import Services from "./Services";
 
 const Home = () => {
   const data = {
@@ -9,6 +10,7 @@ const Home = () => {
   return (
     <>
       <HeroSection myData={data} />
+      <Services />
     </>
   );
 };
