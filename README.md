@@ -56,3 +56,13 @@ link : https://github.com/SaurabhSutar19/E-Commers-Website/blob/aa6a1e85babd1528
 Code link : https://github.com/SaurabhSutar19/E-Commers-Website/tree/aa6a1e85babd1528e9f4222ec70066eb76fe5359/e-commers/src
 
 - - https://github.com/SaurabhSutar19/E-Commers-Website/commit/aa6a1e85babd1528e9f4222ec70066eb76fe5359
+
+15 - Complete Services Section code path,link and update code
+
+path :e-commers/src/Components/Services.jsx
+
+link : https://github.com/SaurabhSutar19/E-Commers-Website/blob/b574bbcc6c5cd9d2aad52aee344e110900a7742c/e-commers/src/Components/Services.jsx
+
+Code link :https://github.com/SaurabhSutar19/E-Commers-Website/tree/b574bbcc6c5cd9d2aad52aee344e110900a7742c/e-commers/src
+
+- - https://github.com/SaurabhSutar19/E-Commers-Website/commit/b574bbcc6c5cd9d2aad52aee344e110900a7742c
