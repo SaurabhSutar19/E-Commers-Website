@@ -5,7 +5,7 @@ const HeroSection = ({ myData }) => {
 
   return (
     <section className="py-24">
-      <div className=" mx-auto px-6 md:px-16">
+      <div className=" mx-auto px-10 md:px-32">
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
           {/* Text Content */}
           <div className="flex-1">
