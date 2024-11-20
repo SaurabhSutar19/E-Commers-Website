@@ -1,10 +1,14 @@
 import React from "react";
 import Header from "./Header";
+import HeroSection from "./HeroSection";
 
 const Home = () => {
+  const data = {
+    name: "E-Commerce store",
+  };
   return (
     <>
-      <h1>Home</h1>
+      <HeroSection myData={data} />
     </>
   );
 };
