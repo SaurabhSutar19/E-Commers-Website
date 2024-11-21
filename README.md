@@ -76,3 +76,17 @@ link : https://github.com/SaurabhSutar19/E-Commers-Website/blob/428f6e484f523c16
 Code link :https://github.com/SaurabhSutar19/E-Commers-Website/tree/428f6e484f523c16a3b0b613cc571dab6799d06c/e-commers/src
 
 - - https://github.com/SaurabhSutar19/E-Commers-Website/commit/428f6e484f523c16a3b0b613cc571dab6799d06c
+
+17 - Update contant componet
+add map with iframe tag
+add form and using Formspree - https://formspree.io/
+
+18 - Complete Footer Section code Path , link and update code
+
+path :e-commers/src/Components/Footer.jsx
+
+link : https://github.com/SaurabhSutar19/E-Commers-Website/blob/9bc26f9837682acadacf6ad27ea876d6517ed0d1/e-commers/src/Components/Footer.jsx
+
+Code link :https://github.com/SaurabhSutar19/E-Commers-Website/tree/9bc26f9837682acadacf6ad27ea876d6517ed0d1/e-commers/src/Components
+
+- - https://github.com/SaurabhSutar19/E-Commers-Website/commit/9bc26f9837682acadacf6ad27ea876d6517ed0d1
