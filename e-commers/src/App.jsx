@@ -8,6 +8,7 @@ import Cart from "./Components/Cart";
 import ErrorPage from "./Components/ErrorPage";
 import Header from "./Components/Header";
 import WishList from "./Components/WishList";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/wishlist" element={<WishList />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
