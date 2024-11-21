@@ -15,35 +15,35 @@ const Trusted = () => {
           </h3>
           <div className="flex flex-col justify-center items-center  md:flex-row md:justify-between  gap-12">
             {/* my 1st img  */}
-            <div className="">
+            <div>
               <img
                 src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image2.png"
                 alt="trusted-brands"
                 className="  hover:shadow-xl rounded-xl p-2 hover:scale-105 transition-all"
               />
             </div>
-            <div className="slide">
+            <div>
               <img
                 src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image3.png"
                 alt="trusted-brands"
                 className="  hover:shadow-xl rounded-xl p-2 hover:scale-105 transition-all"
               />
             </div>
-            <div className="slide">
+            <div>
               <img
                 src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image4.png"
                 alt="trusted-brands"
                 className="  hover:shadow-xl rounded-xl p-2 hover:scale-105 transition-all"
               />
             </div>
-            <div className="slide">
+            <div>
               <img
                 src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image6.png"
                 alt="trusted-brands"
                 className="  hover:shadow-xl rounded-xl p-2 hover:scale-105 transition-all"
               />
             </div>
-            <div className="slide">
+            <div>
               <img
                 src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image8.png"
                 alt="trusted-brands"
