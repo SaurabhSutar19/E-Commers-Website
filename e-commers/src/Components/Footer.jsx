@@ -26,7 +26,7 @@ const Footer = () => {
       </section>
 
       <footer className="bg-blue-950 text-gray-600 py-16 px-32  ">
-        <div className="flex flex-col items-center justify-center md:flex-row md:justify-between gap-20 md:gap-52 mt-20 md:mt-10">
+        <div className="flex flex-col items-center justify-center md:flex-row md:justify-between gap-20 md:gap-52 mt-20 md:mt-0">
           <div className="flex-1  min-w-[250px]">
             <h3 className="text-lg font-semibold text-white">Saurabh Sutar</h3>
             <p className="text-sm mt-4 text-white">
