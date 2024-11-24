@@ -4,6 +4,7 @@ import HeroSection from "./HeroSection";
 import Services from "./Services";
 import Trusted from "./Trusted";
 import Footer from "./Footer";
+import FeatureProducts from "./FeatureProducts";
 
 const Home = () => {
   const data = {
@@ -12,6 +13,7 @@ const Home = () => {
   return (
     <>
       <HeroSection myData={data} />
+      <FeatureProducts />
       <Services />
       <Trusted />
     </>
