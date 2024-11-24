@@ -1,27 +1,27 @@
-import React from "react";
-
-const productReduce = (state, action) => {
+const ProductReducer = (state, action) => {
   switch (action.type) {
     case "SET_LOADING":
       return {
         ...state,
-        isLoding: true,
+        isLoading: true,
       };
 
     case "SET_API_DATA":
       const featureData = action.payload.filter((curElem) => {
-        return featureData.featured === true;
+        return curElem.featured === true;
       });
+
       return {
         ...state,
-        Products: action.payload,
-        featureProducts: [],
+        isLoading: false,
+        products: action.payload,
+        featureProducts: featureData,
       };
 
     case "API_ERROR":
       return {
         ...state,
-        isLoding: false,
+        isLoading: false,
         isError: true,
       };
 
@@ -30,4 +30,4 @@ const productReduce = (state, action) => {
   }
 };
 
-export default productReduce;
+export default ProductReducer;
