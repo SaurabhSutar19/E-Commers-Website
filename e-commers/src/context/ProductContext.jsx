@@ -5,6 +5,7 @@ import reducer from "../reducer/productReduce";
 
 // Create the Context
 const AppContext = createContext();
+
 const API = "https://api.pujakaitem.com/api/products";
 
 const initialstate = {
