@@ -1,9 +1,7 @@
 import React from "react";
-import Header from "./Header";
 import HeroSection from "./HeroSection";
 import Services from "./Services";
 import Trusted from "./Trusted";
-import Footer from "./Footer";
 import FeatureProducts from "./FeatureProducts";
 
 const Home = () => {
