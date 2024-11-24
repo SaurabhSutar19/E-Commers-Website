@@ -34,13 +34,13 @@ const AppProvider = ({ children }) => {
   };
 
   const getSingleProduct = async (url) => {
-    dispatch({ type: "SET_SINGLEPRODUCT_LOADING" });
+    dispatch({ type: "SET_SINGLE_LOADING" });
     try {
       const res = await axios.get(url);
       const singleproduct = await res.data;
-      dispatch({ type: "SET_SINGLEPRODUCT_DATA ", payload: singleproduct });
+      dispatch({ type: "SET_SINGLE_PRODUCT ", payload: singleproduct });
     } catch (error) {
-      dispatch({ type: "SET_SINGLEPRODUCT_ERROR" });
+      dispatch({ type: "SET_SINGLE_ERROR" });
     }
   };
 
