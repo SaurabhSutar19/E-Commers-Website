@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import gym_logo from "../assets/gym_logo.png";
+import e_logo from "../assets/e_logo.png";
 import { IoSearchOutline } from "react-icons/io5";
 import { BsFillHeartFill } from "react-icons/bs";
 import { IoClose } from "react-icons/io5";
@@ -18,7 +18,7 @@ const Header = () => {
       >
         <NavLink to="/">
           <img
-            src={gym_logo}
+            src={e_logo}
             alt=""
             className="w-20  hover:scale-105 transition-all drop-shadow-md"
           />
