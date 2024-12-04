@@ -1,7 +1,15 @@
 import { useEffect } from "react";
-import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { useProductContext } from "../context/ProductContext";
+import PageNavigation from "./PageNavigation";
+import MyImage from "./MyImage";
+import FormatPrice from "../Helpers/FormatPrice";
+import {
+  TbTruckDelivery,
+  TbReplace,
+  TbTruckReturn,
+  TbShieldCheck,
+} from "react-icons/tb";
 
 const API = "https://api.pujakaitem.com/api/products";
 
@@ -9,10 +17,11 @@ const SingleProduct = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } =
     useProductContext();
 
-  console.log("single product", singleProduct);
-
   const { id } = useParams();
 
+  useEffect(() => {
+    getSingleProduct(`${API}?id=${id}`);
+  }, [id]);
   const {
     id: alias,
     name,
@@ -26,94 +35,127 @@ const SingleProduct = () => {
     image,
   } = singleProduct;
 
-  useEffect(() => {
-    getSingleProduct(`${API}?id=${id}`);
-  }, []);
+  if (isSingleLoading) {
+    return (
+      <div className="text-center py-20 text-xl font-semibold">Loading...</div>
+    );
+  }
 
   return (
     <>
-      <h1 className="py-28 text-6xl">single page {name} </h1>
-      <h1>{reviews}</h1>
-      <h1>{category}</h1>
-      <h1>{company}</h1>
-      <h1>{description}</h1>
-      <h1>{stars}</h1>
-      <h1>{price}</h1>
+      <section className="py-20">
+        {/* Page Navigation */}
+        <div className="px-5 md:px-20 h-20 flex justify-start items-center text-2xl font-semibold bg-gray-300">
+          <PageNavigation title={name} />
+        </div>
+
+        {/* Product Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-5 md:px-20 py-10">
+          {/* Images */}
+          <div>
+            <MyImage img={image} />
+          </div>
+
+          {/* Details */}
+          <div className="space-y-5 px-5 md:px-10">
+            <div>
+              <h1 className="text-2xl font-semibold">{name}</h1>
+            </div>
+            <div>
+              <p>{stars} Stars</p>
+              <p>{reviews} Reviews</p>
+            </div>
+            <div>
+              MRP:
+              <del className="ml-2 text-gray-500">
+                <FormatPrice price={price + 250000} />
+              </del>
+            </div>
+            <div>
+              <p>
+                Deal of the Day:{" "}
+                <span className="text-indigo-600 font-medium">
+                  <FormatPrice price={price} />
+                </span>
+              </p>
+            </div>
+            <div>
+              <p>{description}</p>
+            </div>
+
+            {/* Features */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 border-b-2 border-gray-300 pb-5">
+              {/* Free Delivery */}
+              <div className="flex flex-col items-center text-center">
+                <TbTruckDelivery
+                  className="text-indigo-600 bg-white w-12 h-12 p-3 rounded-full shadow-lg hover:scale-110 transition-transform"
+                  aria-label="Free Delivery"
+                />
+                <h3 className="mt-2 text-sm font-medium text-gray-700">
+                  Free Delivery
+                </h3>
+              </div>
+              {/* 30 Days Replacement */}
+              <div className="flex flex-col items-center text-center">
+                <TbReplace
+                  className="text-indigo-600 bg-white w-12 h-12 p-3 rounded-full shadow-lg hover:scale-110 transition-transform"
+                  aria-label="30 Days Replacement"
+                />
+                <h3 className="mt-2 text-sm font-medium text-gray-700">
+                  30 Days Replacement
+                </h3>
+              </div>
+              {/* Fast Delivery */}
+              <div className="flex flex-col items-center text-center">
+                <TbTruckReturn
+                  className="text-indigo-600 bg-white w-12 h-12 p-3 rounded-full shadow-lg hover:scale-110 transition-transform"
+                  aria-label="Fast Delivery"
+                />
+                <h3 className="mt-2 text-sm font-medium text-gray-700">
+                  Fast Delivery
+                </h3>
+              </div>
+              {/* 2 Years Warranty */}
+              <div className="flex flex-col items-center text-center">
+                <TbShieldCheck
+                  className="text-indigo-600 bg-white w-12 h-12 p-3 rounded-full shadow-lg hover:scale-110 transition-transform"
+                  aria-label="2 Years Warranty"
+                />
+                <h3 className="mt-2 text-sm font-medium text-gray-700">
+                  2 Years Warranty
+                </h3>
+              </div>
+            </div>
+
+            {/* Stock and Info */}
+            <div>
+              <p>
+                Available:{" "}
+                <span
+                  className={`font-medium ${
+                    stock > 0 ? "text-green-600" : "text-red-600"
+                  }`}
+                >
+                  {stock > 0 ? "In Stock" : "Not Available"}
+                </span>
+              </p>
+            </div>
+            <div>
+              <p>
+                Id: <span className="font-medium text-gray-600">{id}</span>
+              </p>
+            </div>
+            <div>
+              <p>
+                Brand:{" "}
+                <span className="font-medium text-green-600">{company}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
-
-const Wrapper = styled.section`
-  .container {
-    padding: 9rem 0;
-  }
-  .product-data {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 2rem;
-
-    .product-data-warranty {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #ccc;
-      margin-bottom: 1rem;
-
-      .product-warranty-data {
-        text-align: center;
-
-        .warranty-icon {
-          background-color: rgba(220, 220, 220, 0.5);
-          border-radius: 50%;
-          width: 4rem;
-          height: 4rem;
-          padding: 0.6rem;
-        }
-        p {
-          font-size: 1.4rem;
-          padding-top: 0.4rem;
-        }
-      }
-    }
-
-    .product-data-price {
-      font-weight: bold;
-    }
-    .product-data-real-price {
-      color: ${({ theme }) => theme.colors.btn};
-    }
-    .product-data-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      font-size: 1.8rem;
-
-      span {
-        font-weight: bold;
-      }
-    }
-
-    hr {
-      max-width: 100%;
-      width: 90%;
-      /* height: 0.2rem; */
-      border: 0.1rem solid #000;
-      color: red;
-    }
-  }
-
-  .product-images {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    padding: 0 2.4rem;
-  }
-`;
 
 export default SingleProduct;
