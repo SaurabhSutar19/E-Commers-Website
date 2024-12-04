@@ -1,6 +1,19 @@
-import SingleProduct from "../Components/SingleProduct";
-
 const ProductReducer = (state, action) => {
+  // if (action.type === "SET_LOADING") {
+  //   return {
+  //     ...state,
+  //     isLoading: true,
+  //   };
+  // }
+
+  // if (action.type === "API_ERROR") {
+  //   return {
+  //     ...state,
+  //     isLoading: false,
+  //     isError: true,
+  //   };
+  // }
+
   switch (action.type) {
     case "SET_LOADING":
       return {
@@ -37,7 +50,7 @@ const ProductReducer = (state, action) => {
       return {
         ...state,
         isSingleLoading: false,
-        SingleProduct: action.payload,
+        singleProduct: action.payload,
       };
 
     case "SET_SINGLE_ERROR":

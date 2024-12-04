@@ -1,27 +1,23 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import axios from "axios";
-import Products from "../Components/Products";
 import reducer from "../reducer/productReducer";
 
-// Create the Context
 const AppContext = createContext();
 
 const API = "https://api.pujakaitem.com/api/products";
 
-const initialstate = {
+const initialState = {
   isLoading: false,
   isError: false,
-  Products: [],
+  products: [],
   featureProducts: [],
   isSingleLoading: false,
-  singleproduct: {},
+  singleProduct: {},
 };
 
-// Create a Provider component
 const AppProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialstate);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  // Fetch products inside useEffect
   const getProducts = async (url) => {
     dispatch({ type: "SET_LOADING" });
     try {
@@ -33,29 +29,33 @@ const AppProvider = ({ children }) => {
     }
   };
 
+  // my 2nd api call for single product
+
   const getSingleProduct = async (url) => {
     dispatch({ type: "SET_SINGLE_LOADING" });
     try {
       const res = await axios.get(url);
-      const singleproduct = await res.data;
-      dispatch({ type: "SET_SINGLE_PRODUCT ", payload: singleproduct });
+      const singleProduct = await res.data;
+      dispatch({ type: "SET_SINGLE_PRODUCT", payload: singleProduct });
     } catch (error) {
       dispatch({ type: "SET_SINGLE_ERROR" });
     }
   };
 
   useEffect(() => {
-    getProducts(API); // Fetch products when the component mounts
+    getProducts(API);
   }, []);
 
   return (
-    <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{ ...state, getSingleProduct }}>
+      {children}
+    </AppContext.Provider>
   );
 };
 
-// Custom hook for consuming the context
-const useAppContext = () => {
+// custom hooks
+const useProductContext = () => {
   return useContext(AppContext);
 };
 
-export { AppProvider, useAppContext };
+export { AppProvider, AppContext, useProductContext };

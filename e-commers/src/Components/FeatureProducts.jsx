@@ -1,6 +1,6 @@
 import React from "react";
 import Product from "../Components/product";
-import { useAppContext } from "../context/productcontext";
+import { useProductContext } from "../context/ProductContext";
 
 const FeatureProducts = () => {
   // const { isLoding, featureProducts } = useAppContext();
@@ -15,7 +15,7 @@ const FeatureProducts = () => {
   //   );
   // }
 
-  const { isLoading, featureProducts } = useAppContext();
+  const { isLoading, featureProducts } = useProductContext();
 
   if (isLoading) {
     return <div className="text-center text-2xl text-gray-500">Loading...</div>;
