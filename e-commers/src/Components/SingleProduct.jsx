@@ -10,6 +10,8 @@ import {
   TbTruckReturn,
   TbShieldCheck,
 } from "react-icons/tb";
+import Star from "../Helpers/Star";
+import AddToCart from "./AddToCart";
 
 const API = "https://api.pujakaitem.com/api/products";
 
@@ -59,21 +61,20 @@ const SingleProduct = () => {
           {/* Details */}
           <div className="space-y-5 px-5 md:px-10">
             <div>
-              <h1 className="text-2xl font-semibold">{name}</h1>
+              <h1 className="text-2xl font-semibold text-gray-800">{name}</h1>
             </div>
             <div>
-              <p>{stars} Stars</p>
-              <p>{reviews} Reviews</p>
+              <Star star={stars} review={reviews} />
             </div>
-            <div>
-              MRP:
+            <div className="flex items-center">
+              MRP :
               <del className="ml-2 text-gray-500">
                 <FormatPrice price={price + 250000} />
               </del>
             </div>
             <div>
               <p>
-                Deal of the Day:{" "}
+                Deal of the Day :{" "}
                 <span className="text-indigo-600 font-medium">
                   <FormatPrice price={price} />
                 </span>
@@ -130,7 +131,7 @@ const SingleProduct = () => {
             {/* Stock and Info */}
             <div>
               <p>
-                Available:{" "}
+                Available :{" "}
                 <span
                   className={`font-medium ${
                     stock > 0 ? "text-green-600" : "text-red-600"
@@ -142,15 +143,17 @@ const SingleProduct = () => {
             </div>
             <div>
               <p>
-                Id: <span className="font-medium text-gray-600">{id}</span>
+                Id : <span className="font-medium text-gray-600">{id}</span>
               </p>
             </div>
             <div>
               <p>
-                Brand:{" "}
+                Brand :{" "}
                 <span className="font-medium text-green-600">{company}</span>
               </p>
             </div>
+            <hr />
+            <div>{stock > 0 && <AddToCart product={singleProduct} />}</div>
           </div>
         </div>
       </section>
