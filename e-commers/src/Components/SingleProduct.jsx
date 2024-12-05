@@ -1,9 +1,12 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { useProductContext } from "../context/ProductContext";
 import PageNavigation from "./PageNavigation";
 import MyImage from "./MyImage";
 import FormatPrice from "../Helpers/FormatPrice";
+import troly from "../assets/shopping-cart.png";
+import heart from "../assets/heart.png";
+import { BsFillHeartFill, BsCart4 } from "react-icons/bs";
 import {
   TbTruckDelivery,
   TbReplace,
@@ -45,7 +48,7 @@ const SingleProduct = () => {
 
   return (
     <>
-      <section className="py-20">
+      <section className="py-20 ">
         {/* Page Navigation */}
         <div className="px-5 md:px-20 h-20 flex justify-start items-center text-2xl font-semibold bg-gray-300">
           <PageNavigation title={name} />
@@ -59,7 +62,7 @@ const SingleProduct = () => {
           </div>
 
           {/* Details */}
-          <div className="space-y-5 px-5 md:px-10">
+          <div className="space-y-5 px-5 md:px-10 font-medium text-gray-800">
             <div>
               <h1 className="text-2xl font-semibold text-gray-800">{name}</h1>
             </div>
@@ -143,7 +146,7 @@ const SingleProduct = () => {
             </div>
             <div>
               <p>
-                Id : <span className="font-medium text-gray-600">{id}</span>
+                Id : <span className="font-medium text-green-600">{id}</span>
               </p>
             </div>
             <div>
@@ -154,6 +157,17 @@ const SingleProduct = () => {
             </div>
             <hr />
             <div>{stock > 0 && <AddToCart product={singleProduct} />}</div>
+            <div className="flex  items-center gap-4 mb-3">
+              <button className="px-3 py-3 shadow-lg rounded-lg bg-gray-100 hover:bg-gray-200 font-semibold ">
+                <p className="font-serif hover:scale-105  ">Buy Now</p>
+              </button>
+              <button className="px-3 py-3 shadow-md rounded-lg bg-gray-100 hover:bg-gray-200 ">
+                <BsCart4 className="text-gray-600 hover:scale-125 hover:text-gray-800 text-2xl font-bold" />
+              </button>
+              <button className="px-3 py-3 shadow-md rounded-lg bg-gray-100 hover:bg-gray-200 font-blod ">
+                <BsFillHeartFill className="text-red-600 hover:scale-125 hover:text-red-800 text-2xl" />
+              </button>
+            </div>
           </div>
         </div>
       </section>
